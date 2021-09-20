@@ -24,6 +24,9 @@ hajk eller annat evenemang.
 
 I Ditt dokument ska det nu finnas en Scoutnet-meny.
 
+Första gången något används kommer det komma en fråga från Google om ett antal
+rättigheter som behövs för att köra.
+
 Under inställningar får du fylla i din kårs scoutnet-ID och
 den API-nyckel som använda för att hämta hem information från scoutnet.
 
