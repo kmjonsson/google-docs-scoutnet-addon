@@ -3,6 +3,8 @@
  * @author Magnus Jonsson <magnus.jonsson@tegsscoutkar.se>
  */
 
+let debug = false;
+
 // onOpen Trigger
 function onOpen() {
   addMenu();
@@ -512,7 +514,26 @@ var scoutnet_url = 'www.scoutnet.se'; //Scoutnets webbadress
 /*
  * Hämta alla medlemmar
  */
-function fetchFromScoutnet() {  
+function fetchFromScoutnet() {
+  // Litet dataset för test/utveckling för att slippa anropa scoutnet.
+  if(debug) {
+    return [
+      {
+        'unit': "Testavdelning",
+        'member_no': "123456",
+        'first_name': "Test",
+        'last_name': "Testsson",
+        'group': "Test Scoutkår",
+        'email': 'email@example.com',
+        'address_1':"Testgatan 10", 'address_2': "" , 'address_3':"", 'postcode': '12345', 'town':'Testfield',
+        'contact_mobile_phone':'555-654 321', 'contact_home_phone': '555-123 456',
+        'contact_mothers_name':"Mamma Testsson",'contact_mobile_mum':'555-111 222','contact_email_mum':'mamma@example.com',
+        'contact_fathers_name':"Pappa Testsson",'contact_mobile_dad':'555-333 222','contact_email_dad':'pappa@example.com',
+
+      }
+    ];
+  }
+
   var url = 'https://' + scoutnet_url + '/api/group/memberlist?id=' + getGroupId() + '&key=' + getApiKey(); // + '&pretty=1';
   var response = UrlFetchApp.fetch(url, {'muteHttpExceptions': true});
   
