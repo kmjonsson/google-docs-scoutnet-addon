@@ -505,8 +505,7 @@ function generateDocument(member, targetFolder_id) {
   moveFileId(fileId,targetFolder_id);
   
   // Ta bort google dokumentet  
-  var folder = DriveApp.getFolderById(targetFolder_id); 
-  folder.removeFile(DriveApp.getFileById(targetId));
+  DriveApp.getFileById(targetId).setTrashed(true);
 }
 
 var scoutnet_url = 'www.scoutnet.se'; //Scoutnets webbadress
